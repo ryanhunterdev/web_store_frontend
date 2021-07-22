@@ -1,0 +1,85 @@
+.cart-modal-wrap {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.cart-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.372);
+    height: 100vh;
+    width: calc(100vw - 15em);
+}
+
+.cart-modal {
+    width: 15em;
+    height: 100vh;
+    position: relative;
+    background-color: white;
+    display: flex;
+    overflow: scroll;
+    flex-direction: column;
+}
+
+.cart-modal-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid #f4f1f1;
+    padding: 1em;
+}
+
+.cart-item-grid {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 7em);
+    height: calc(100% - 280px);
+    overflow: scroll;
+}
+
+.cart-modal-contents {
+    position: relative;
+}
+
+.cart-modal-bottom {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: white;
+    width: 15em;
+    height: 10.5em;
+    border-top: 2px solid #f4f1f1;
+}
+
+.cart-modal-subtotal-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: .5em;
+}
+
+.cart-modal-subtotal {
+    font-weight: bold;
+}
+
+.bottom-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-modal-button {
+    background: rgb(54, 80, 71);
+    font-size: inherit;
+    border: 1px solid white;
+    color: white;
+    padding: .5em;
+    cursor: pointer;
+}
+
+.cart-modal-button:hover {
+    color: black;
+    background: white;
+    border: 3px solid black;
+}

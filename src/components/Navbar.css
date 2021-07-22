@@ -1,0 +1,59 @@
+header {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    height: 3em;
+    /* background: rgb(255, 255, 255); */
+    background-color: rgb(54, 80, 71);
+    color: white;
+    z-index: 1;
+    font-size: 1em;
+    padding: .5em 1.5em;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    padding: 0 .5em;
+}
+
+.nav-checkout {
+    position: sticky;
+}
+
+.nav-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-amount-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cart-amount-container span {
+    padding-left: .5em;
+}
+
+.nav-checkout-button {
+    border: 2px solid black;
+    background: none;
+    padding: 5px;
+    font-size: inherit;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.nav-checkout-button:hover {
+    background: black;
+    color: white;
+    transition: .1s;
+}

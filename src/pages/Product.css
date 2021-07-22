@@ -1,0 +1,125 @@
+.product-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2em;
+    padding-bottom: 3em;
+}
+
+.product-left {
+
+}
+
+.product-year-condition {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 1em;
+}
+
+.product-info {
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+    min-width: 150px;
+    
+}
+
+.product-info span {
+    text-decoration: underline;
+}
+
+.product-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.product-stock {
+    display: flex;
+    justify-content: space-between;
+    width: 6em;
+}
+
+.product-quantity {
+    border-radius: 5px;
+    text-align: center;
+}
+
+.incrementer-and-button {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 500px;
+}
+
+.product-big-cart-button {
+    height: 2.5em;
+    width: 12em;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.product-description {
+    text-align: left;
+    padding-top: 1em;
+}
+
+.genres, .incrementer-and-button {
+    padding-top: 1em;
+}
+
+.genre-link {
+    padding-left: .5em;
+}
+
+.similar-items {
+    border-top: 2px solid rgb(206, 203, 203);
+    padding-top: 2em;
+    width: 100%;
+}
+
+.similar-items h3 {
+    padding-bottom: 2em;
+}
+
+@media (max-width: 800px) {
+    .product-wrapper {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 0;
+        gap: 0;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .product-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        gap: 1em;
+        padding-top: 1em;
+    }
+
+    .product-title {
+        padding-bottom: 0;
+    }
+
+    .incrementer-and-button {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .product-big-cart-button {
+        width: 100%;
+    }
+
+    .product-description {
+        padding-top: 0;
+    }
+}

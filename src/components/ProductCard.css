@@ -1,0 +1,37 @@
+.product-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-artist {
+    font-weight: bold;
+    padding-bottom: .2em;
+}
+
+.product-card-bottom {
+    padding-top: .5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.product-card-bottom-left {
+    text-align: left;
+    font-size: .8em;
+}
+
+.product-card-bottom-right {
+    text-align: right;
+    font-size: .8em;
+}
+
+.card-cart {
+    font-size: 1.5em;
+}
+
+.product-title {
+    padding-bottom: .5em;
+}

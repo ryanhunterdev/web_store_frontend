@@ -1,0 +1,24 @@
+.shop-wrapper {
+
+}
+
+.filter-options {
+    display: flex;
+    align-items: center;
+    padding: 2em 0;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.option-container {
+    display: flex;
+}
+
+.option-container p {
+    padding-right: .5em;
+}
+
+.shop-filter-middle {
+    padding-left: 1em;
+}
+

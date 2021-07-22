@@ -15,10 +15,10 @@ export default function CartItem({cartItem, itemRemoved, itemUpdated}) {
       removeItem(id)
       itemRemoved()
     } else if (intention === 'increment') {
-      incrementItem()
+      incrementItem(id)
       itemUpdated()
     } else {
-      decrementItem()
+      decrementItem(id)
       itemUpdated()
     }
   }

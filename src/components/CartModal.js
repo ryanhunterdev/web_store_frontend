@@ -13,7 +13,7 @@ export default function CartModal(props) {
 
     const { cartDetails, clearCart, formattedTotalPrice } = useShoppingCart();
 
-    const { toggleCartModal } = useContext(ModalContext)
+    const { toggleCartModal, isModalOpen } = useContext(ModalContext)
 
     const cartItems = Object.keys(cartDetails).map(key => cartDetails[key])
 
@@ -29,14 +29,16 @@ export default function CartModal(props) {
                 onClick={toggleCartModal}
             >
             </div>
-            <div className="cart-modal">
+            <div 
+                className={"cart-modal"}>
                 <div className="cart-modal-top">
                     <Toaster 
                         toastOptions={{
                         className: '',
+                        duration: 1000,
                         style: { 
                             border: '1px solid black',
-                            borderRadius: '0',
+                            borderRadius: '0'
                             }
                         }} 
                         containerStyle={{

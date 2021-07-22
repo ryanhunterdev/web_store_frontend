@@ -8,13 +8,13 @@ const Navbar = () => {
 
     return ( 
         <header>
-            <h1 className="nav-header">
-                <Link to="/shop">rekkids n merch</Link>
-            </h1>
-          
-            <div className="nav-checkout">
-                <CartSummary />
-            </div>
+                <h1 className="nav-header">
+                    <Link to="/shop" style={{fontWeight: 600}}>rekkids n merch</Link>
+                </h1>
+            
+                <div className="nav-checkout">
+                    <CartSummary />
+                </div>
         </header>
     );
 }

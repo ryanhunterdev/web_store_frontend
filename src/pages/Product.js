@@ -5,7 +5,7 @@ import './Product.css'
 import ProductStock from "../components/ProductStock"
 import { useShoppingCart } from "use-shopping-cart";
 import formatCurrencyString from '../utility/formatProductPrice.js'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProductsGrid from '../components/ProductsGrid';
 import { ProductsContext } from "../ProductsContext"
 import { useContext } from "react";
@@ -30,8 +30,10 @@ export default function Product () {
         addQuantity > 1 && setAddQuantity(addQuantity - 1)
     }
     
-    let { item } = useParams()
-    const urlName = item
+
+    let { item: urlName } = useParams()
+
+    useEffect(() => document.title = `${urlName.replaceAll("-", " ")} - rekkids n merch`)
 
     const { data: product, isLoading, isError, error } = useQuery(["Product", urlName], () => axios(`/api/products/${urlName}`).then((res) => res.data.product))
 
@@ -84,7 +86,7 @@ export default function Product () {
     }
 
     return ( 
-        <> 
+        <div className="product-page"> 
         <h1 style={{
                 fontSize: "2.5em",
                 fontWeight: "600",
@@ -165,7 +167,7 @@ export default function Product () {
                         <span style={{textDecoration: "underline"}}>Genres:</span> 
                     {
                         genre.map(genre => 
-                        <a href="https://test.com" className="genre-link" key={ genre }>{ genre }</a>
+                        <p style={{ display: 'inline'}}className="genre-link" key={ genre }>{ genre }</p>
                     )
                     }
                     </div>
@@ -174,10 +176,10 @@ export default function Product () {
         </div>
 
             <div className="similar-items">
-                <h3>Similar items:</h3>
+                <h3 style={{ fontWeight: '500'}}>Similar items:</h3>
                 <ProductsGrid products={similarItems(allProducts)}/>
             </div>
-        </>
+        </div>
 
         
      );

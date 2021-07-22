@@ -1,9 +1,11 @@
+import "@fontsource/work-sans"
 import './App.css';
 import { Switch, Route } from "react-router-dom";
 import { CartProvider } from "use-shopping-cart";
 import { useContext } from "react";
 import { ModalContext } from "./ModalContext"
 import Marquee from "react-fast-marquee";
+
 
 
 import Navbar from "./components/Navbar"

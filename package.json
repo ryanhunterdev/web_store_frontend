@@ -5,7 +5,11 @@
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^1.6.5",
+    "@fontsource/aileron": "^4.5.0",
+    "@fontsource/karla": "^4.5.0",
     "@fontsource/material-icons": "^4.5.0",
+    "@fontsource/poppins": "^4.5.0",
+    "@fontsource/work-sans": "^4.5.0",
     "@material-ui/icons": "^4.11.2",
     "@stripe/stripe-js": "^1.16.0",
     "@testing-library/jest-dom": "^5.14.1",

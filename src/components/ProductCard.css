@@ -5,6 +5,10 @@
     justify-content: space-between;
 }
 
+.product-card:hover a {
+    text-decoration: underline;
+}
+
 .product-artist {
     font-weight: bold;
     padding-bottom: .2em;
@@ -35,3 +39,4 @@
 .product-title {
     padding-bottom: .5em;
 }
+

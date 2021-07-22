@@ -43,6 +43,8 @@ export default function Shop() {
         handleGenreChange(currentGenre)
     }, [currentGenre])
 
+    useEffect(() => document.title = 'shop - rekkids n merch')
+
     if (isLoading) return <div><h1>LOADING...</h1></div>
 
     function handleCategoryChange(value) {

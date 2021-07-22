@@ -1,5 +1,5 @@
 .shop-wrapper {
-
+    animation: fade-in .3s ease-in;
 }
 
 .filter-options {
@@ -20,5 +20,15 @@
 
 .shop-filter-middle {
     padding-left: 1em;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 

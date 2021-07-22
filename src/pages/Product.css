@@ -1,3 +1,7 @@
+.product-page {
+    animation: fade-in .3s ease-in;
+}
+
 .product-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -121,5 +125,15 @@
 
     .product-description {
         padding-top: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }

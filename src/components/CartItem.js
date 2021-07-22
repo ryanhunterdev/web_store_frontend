@@ -4,13 +4,24 @@ import "@fontsource/material-icons";
 
 import "./CartItem.css"
 
-export default function CartItem({cartItem}) {
+export default function CartItem({cartItem, itemRemoved, itemUpdated}) {
 
   const { removeItem, incrementItem, decrementItem } = useShoppingCart()
 
-  console.log(cartItem);
-
   const { image, name, stock, quantity, id, formattedValue } = cartItem
+
+  function handleEditItem(intention, id) {
+    if (intention === 'remove') {
+      removeItem(id)
+      itemRemoved()
+    } else if (intention === 'increment') {
+      incrementItem()
+      itemUpdated()
+    } else {
+      decrementItem()
+      itemUpdated()
+    }
+  }
 
   const price = formatProductPrice(cartItem)
   
@@ -33,7 +44,7 @@ export default function CartItem({cartItem}) {
               <div className="info-top-right">
                 <div 
                   className="remove-item"
-                  onClick={() => removeItem(id)}
+                  onClick={() => handleEditItem('remove', id)}
                   >
                     <span className="material-icons">
                     delete
@@ -46,7 +57,7 @@ export default function CartItem({cartItem}) {
               <div className="cart-item-quantity">
                 <button 
                   className="cart-quantity-button"
-                  onClick={() => decrementItem(id)}>
+                  onClick={() => handleEditItem('decrement', id)}>
                   -
                 </button>
                 <div className="cart-quantity">
@@ -54,7 +65,7 @@ export default function CartItem({cartItem}) {
                 </div>
                 <button 
                   className="cart-quantity-button"
-                  onClick={() => incrementItem(id)}
+                  onClick={() => handleEditItem('increment', id)}
                   disabled={quantity >= stock}
                   >
                   +

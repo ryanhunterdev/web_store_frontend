@@ -1,6 +1,5 @@
 import './App.css';
 import { Switch, Route } from "react-router-dom";
-import { loadStripe } from '@stripe/stripe-js' 
 import { CartProvider } from "use-shopping-cart";
 import { useContext } from "react";
 import { ModalContext } from "./ModalContext"
@@ -37,7 +36,8 @@ function App() {
           style={{
             height: "2em",
             fontStyle: "italic",
-            fontSize: "2em"
+            fontSize: "2em",
+            zIndex: 0
             }}
           speed="50"
           gradient={false}

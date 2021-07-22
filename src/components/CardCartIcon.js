@@ -13,10 +13,10 @@ export default function CardCartIcon(props) {
 
     const handleAddItem = (product) => () => {
         addItem(product)
+        setTimeout(() => setIsModalOpen(true), 100)
+
     }
 
-
-    
     function calculateStock() {
         if (cartDetails[id]) {
             return stock - cartDetails[id].quantity

@@ -4,10 +4,12 @@ import "./CartModal.css"
 import { useContext } from "react";
 import { ModalContext } from "../ModalContext"
 import useCheckout from '../utility/useCheckout'
+import toast, { Toaster } from 'react-hot-toast';
 
+const itemUpdated = () => toast('Item Updated')
+const itemRemoved = () => toast('Item Removed')
 
-
-export default function CartModal() {
+export default function CartModal(props) {
 
     const { cartDetails, clearCart, formattedTotalPrice } = useShoppingCart();
 
@@ -16,6 +18,8 @@ export default function CartModal() {
     const cartItems = Object.keys(cartDetails).map(key => cartDetails[key])
 
     const handleCheckout = useCheckout()
+
+    console.log(props);
 
     return (
         
@@ -27,6 +31,21 @@ export default function CartModal() {
             </div>
             <div className="cart-modal">
                 <div className="cart-modal-top">
+                    <Toaster 
+                        toastOptions={{
+                        className: '',
+                        style: { 
+                            border: '1px solid black',
+                            borderRadius: '0',
+                            }
+                        }} 
+                        containerStyle={{
+                            position: 'absolute',
+                            top: 0,
+                            right: 0,
+                        }}
+
+                    />
                     <h2 className="cart-modal-heading">Your Cart</h2>
                     <span 
                         className="close-modal"
@@ -41,7 +60,12 @@ export default function CartModal() {
                 
                 <div className="cart-item-grid">
                     {cartItems.map(cartItem => (
-                        <CartItem key={cartItem.id} cartItem={cartItem} />
+                        <CartItem 
+                            key={cartItem.id} 
+                            cartItem={cartItem}
+                            itemUpdated={itemUpdated}
+                            itemRemoved={itemRemoved}
+                             />
                     ))}
                 </div>
                 <div className="cart-modal-bottom">

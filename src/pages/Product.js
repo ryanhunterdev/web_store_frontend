@@ -9,6 +9,7 @@ import { useState } from 'react';
 import ProductsGrid from '../components/ProductsGrid';
 import { ProductsContext } from "../ProductsContext"
 import { useContext } from "react";
+import { ModalContext } from "../ModalContext"
 
     
 export default function Product () {
@@ -18,6 +19,8 @@ export default function Product () {
     const { allProducts } = useContext(ProductsContext)
 
     const [addQuantity, setAddQuantity] = useState(1)
+
+    const { setIsModalOpen } = useContext(ModalContext)
 
     const handleIncrement = () => {
         
@@ -66,6 +69,7 @@ export default function Product () {
 
     function handleAddItem() { 
         addItem(product, { count: Number(addQuantity) });
+        setTimeout(() => setIsModalOpen(true), 100)
         setAddQuantity(1)
     }
 

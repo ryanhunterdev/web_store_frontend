@@ -9,9 +9,11 @@
     z-index: 99;
 }
 .cart-modal-overlay {
-    background-color: rgba(0, 0, 0, 0.372);
+    background-color: rgba(0, 0, 0, 0.495);
     height: 100vh;
     width: calc(100vw - 15em);
+    opacity: 1;
+    animation: 1s fade-in;
 }
 
 .cart-modal {
@@ -22,6 +24,7 @@
     display: flex;
     overflow: scroll;
     flex-direction: column;
+    animation: slide 1s;
 }
 
 .cart-modal-top {
@@ -82,4 +85,28 @@
     color: black;
     background: white;
     border: 3px solid black;
+}
+
+@keyframes slide {
+
+    from {
+        transform: translateX(20em);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes fade-in {
+    
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+
 }

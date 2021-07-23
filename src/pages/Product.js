@@ -20,6 +20,8 @@ export default function Product () {
 
     const [addQuantity, setAddQuantity] = useState(1)
 
+    const [isLargeImageUp, setisLargeImageUp] = useState(false)
+
     const { setIsModalOpen } = useContext(ModalContext)
 
     const handleIncrement = () => {
@@ -30,6 +32,7 @@ export default function Product () {
         addQuantity > 1 && setAddQuantity(addQuantity - 1)
     }
     
+    const toggleLargeImage = () => {setisLargeImageUp(!isLargeImageUp)}
 
     let { item: urlName } = useParams()
 
@@ -87,6 +90,14 @@ export default function Product () {
 
     return ( 
         <div className="product-page"> 
+        {isLargeImageUp && 
+            <div className="image-large-overlay" onClick ={toggleLargeImage}>
+                <div className="image-large-modal">
+                    <p onClick ={toggleLargeImage}>x</p>
+                    <img src={image} alt={name} className="large-img" />
+                </div>
+            </div>       
+        }
         <h1 style={{
                 fontSize: "2.5em",
                 fontWeight: "600",
@@ -96,7 +107,12 @@ export default function Product () {
             }}>{name}</h1>
         <div className="product-wrapper">
             <div className="product-left">
-                <img src={image} alt={name} className="product-img" />
+                <img 
+                    src={image} 
+                    alt={name} 
+                    className="product-img" 
+                    onClick ={toggleLargeImage}
+                    />
                 { isMusic && 
                     <div className="product-year-condition">
                         <p className="product-info"><span>Year:</span>

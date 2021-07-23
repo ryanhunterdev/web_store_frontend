@@ -83,3 +83,9 @@ a:hover {
         opacity: 1;
     }
 }
+
+@media (max-width: 400px) {
+	body {
+		font-size: 15px;
+	}
+}

@@ -9,11 +9,12 @@ import {
     Flex, 
     Spacer 
 } from "@chakra-ui/react"
-
+import "@fontsource/material-icons";
 
 import './Shop.css'
 
 import ProductsGrid from '../components/ProductsGrid';
+import DropDownButton from '../components/DropDownButton';
 
 
 export default function Shop() {
@@ -117,15 +118,15 @@ export default function Shop() {
                 <p>Sort By:</p>
                 <Spacer />
                     <Menu>
-                        <MenuButton
-                            _hover={{
-                                textDecoration: "underline"
-                            }}
-                        >{currentCategory}</MenuButton>
-                        <MenuList>
+                        <DropDownButton content={currentCategory}/>
+                        <MenuList
+                            style={{
+                            border: "1px solid black",
+                            borderRadius: "0",
+                            padding: "0"
+                        }} >
                             <MenuItem 
                                 onClick={() => setCurrentCategory("Music")
-                                
                                 }
                             >
                                 Music
@@ -144,15 +145,13 @@ export default function Shop() {
                     </Menu>
                     <Spacer />
                     <Menu>
-                        <MenuButton 
-                            onClick={updateState}
-                            _hover={{
-                                textDecoration: "underline"
-                            }}
-                            >
-                            {currentSort}
-                        </MenuButton>
-                        <MenuList>
+                        <DropDownButton content={currentSort}/>
+                        <MenuList
+                            style={{
+                            border: "1px solid black",
+                            borderRadius: "0",
+                            padding: "0"
+                        }} >
                             <MenuItem onClick={() => setCurrentSort("Highest")}>
                                 Price: Highest
                             </MenuItem>
@@ -168,12 +167,13 @@ export default function Shop() {
                     {isMusic && 
                         
                         <Menu>
-                            <MenuButton _hover={{
-                                textDecoration: "underline"
-                            }}>
-                                {currentGenre}
-                            </MenuButton>
-                            <MenuList>
+                            <DropDownButton content={currentGenre}/>
+                            <MenuList
+                            style={{
+                            border: "1px solid black",
+                            borderRadius: "0",
+                            padding: "0"
+                        }} >
                             {allGenres.map(genre => (
                                 <MenuItem onClick={() => setCurrentGenre(genre)} key={genre}>
                                     {genre}
